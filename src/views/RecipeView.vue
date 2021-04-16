@@ -1,12 +1,21 @@
 <template>
-  <div>I've found a new recipeh</div>
+  <div>
+    <div class="title">The Recipeh Project</div>
+    <div>
+      <span class="recipe-items" v-for="(v, i) in recipes" :key="i">
+        {{ v }}
+      </span>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({})
-export default class RecipeView extends Vue {}
+export default class RecipeView extends Vue {
+  private recipes: string[] = ["Omurice", "Onigiri", "Cup Ramen"];
+}
 </script>
 
 <style lang="scss">
@@ -15,5 +24,11 @@ export default class RecipeView extends Vue {}
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 }
 @media screen and (max-width: 767px) {
+  .title {
+    font-size: 2rem;
+  }
+  .recipe-items {
+    display: block;
+  }
 }
 </style>
