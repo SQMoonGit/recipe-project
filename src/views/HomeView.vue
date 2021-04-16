@@ -1,6 +1,7 @@
 <template>
   <div class="home-view">
     <div class="title">The Recipeh Project</div>
+    <button class="add-button">Add Recipe</button>
     <div class="recipe-list">
       <router-link
         class="recipe-items"
@@ -39,6 +40,17 @@ export default class HomeView extends Vue {
   .title {
     font-size: 2rem;
   }
+
+  .add-button {
+    position: fixed;
+    right: 1rem;
+    font-size: 1.5rem;
+    border-radius: 4rem;
+    border: 1px solid white;
+    background-color: royalblue;
+    color: white;
+  }
+
   .recipe-list {
     margin: 0.5rem 0;
     .recipe-items {
