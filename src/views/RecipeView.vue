@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div class="recipe-view">Recipe details here</div>
+</template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";

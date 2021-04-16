@@ -1,10 +1,15 @@
 <template>
-  <div>
+  <div class="home-view">
     <div class="title">The Recipeh Project</div>
-    <div>
-      <span class="recipe-items" v-for="(v, i) in recipes" :key="i">
+    <div class="recipe-list">
+      <router-link
+        class="recipe-items"
+        v-for="(v, i) in recipes"
+        :key="i"
+        :to="{ name: 'recipe', params: { recipe: v } }"
+      >
         {{ v }}
-      </span>
+      </router-link>
     </div>
   </div>
 </template>
@@ -14,7 +19,14 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component({})
 export default class HomeView extends Vue {
-  private recipes: string[] = ["Omurice", "Onigiri", "Cup Ramen"];
+  private recipes: string[] = [
+    "Omurice",
+    "Onigiri",
+    "Cup_Ramen",
+    "Steak",
+    "Cake",
+    "Pie",
+  ];
 }
 </script>
 
@@ -27,8 +39,24 @@ export default class HomeView extends Vue {
   .title {
     font-size: 2rem;
   }
-  .recipe-items {
-    display: block;
+  .recipe-list {
+    margin: 0.5rem 0;
+    .recipe-items {
+      display: block;
+      font-size: 1.5rem;
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        background-color: silver;
+      }
+
+      &:active {
+        color: white;
+        background-color: royalblue;
+        text-decoration: underline;
+      }
+    }
   }
 }
 </style>
